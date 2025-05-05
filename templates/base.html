@@ -3,20 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>py-kms {% block title %}{% endblock %}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-        .truncate {
-            max-width: 200px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        /* {% block style %}{% endblock %} */
-    </style>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename= 'favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/pykms-frontend.css') }}">
 </head>
 <body class="h-full">
     <div class="min-h-full">
@@ -31,20 +19,6 @@
             </div>
             {% endif %}
         </div>
-
-        <footer class="border-t border-gray-700 mt-8 py-6">
-            <div class="text-center text-sm text-gray-400 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <p>
-                    <strong class="text-gray-200">py-kms</strong> is online since <span class="convert_timestamp">{{ start_time }}</span>.
-                    Accessed {{ get_serve_count() }} times. View license <a href="/license" class="text-blue-400 hover:text-blue-300">here</a>.
-                </p>
-                {% if version_info %}
-                <p class="mt-2">
-                    Version "{{ version_info['hash'] }}" from branch "{{ version_info['branch'] }}" of py-kms
-                </p>
-                {% endif %}
-            </div>
-        </footer>
     </div>
 
     <script>

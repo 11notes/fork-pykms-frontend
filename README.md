@@ -11,17 +11,14 @@ I came across a reddit post about it decided to test py-kms myself and to my sup
 - Copy to clipboard on GLVK
 - Smooth Animation
 
-### Usage
-locate templates directory of pykms and replace the content with whats in this project.
-
 ### Docker
-I highly suggest using [11note](https://github.com/11notes/docker-kms)'s image. mount the template directory of this project to the container. example:
+I highly suggest using [11note](https://github.com/11notes/docker-kms)'s image which uses this style as default.
 
 ```
 name: "kms"
 services:
   kms:
-    image: "11notes/kms:465f4d1"
+    image: "11notes/kms:stable"
     container_name: "kms"
     environment:
       TZ: "Europe/Zurich"
@@ -37,7 +34,6 @@ services:
       TZ: "Europe/Zurich"
     volumes:
       - "var:/kms/var"
-      - "/path/to/templates:/opt/py-kms/templates/"
     ports:
       - "8080:8080/tcp"
     restart: "always"

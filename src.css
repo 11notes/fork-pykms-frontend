@@ -1,0 +1,26 @@
+@import "tailwindcss";
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.truncate {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.collapsible {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.copyable {
+  cursor: pointer;
+}
+.epid-tooltip {
+  @apply hidden absolute bg-white dark:bg-gray-700 p-3 rounded-lg shadow-xl border dark:border-gray-600 z-10;
+  max-width: 400px;
+  word-break: break-all;
+}
+.client-id-cell:hover .epid-tooltip {
+  @apply block;
+}
